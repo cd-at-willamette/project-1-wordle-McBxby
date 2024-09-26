@@ -141,6 +141,10 @@ class WordleGWindow(GWindow):
 
         GWindow.__init__(self, GWINDOW_WIDTH, GWINDOW_HEIGHT)
         self._grid = create_grid()
+        welcome_label = GLabel("Welcome to Myles's Wordle!")
+        welcome_label.set_font("bold 20px 'Helvetica Neue',sans-serif")
+        welcome_label_y = TOP_MARGIN / 2
+        self.add(welcome_label, GWINDOW_WIDTH / 2 - welcome_label.get_width() / 2, welcome_label_y)
         self._message = create_message()
         self._keys = create_keyboard()
         self._listeners = [ ]
