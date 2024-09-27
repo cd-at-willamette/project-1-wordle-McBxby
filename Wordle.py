@@ -15,11 +15,11 @@ def wordle():
 
     def enter_action():
         # What should happen when RETURN/ENTER is pressed.
-        current_row = gw.get_current_row() # Declare current_row as nonlocal
+        current_row = gw.get_current_row() # Get the current row
         guess = word_from_row(current_row).upper() # Get the current guess from the current row
         if len(guess) == N_COLS and is_english_word(guess.upper()): # Check if the guess is a valid 5-letter English word
-            color_row(current_row, guess)
-            gw.show_message("That's a 5 letter English word")  # Show message for correct guess
+            color_row(current_row, guess) # Color the row based on the guess
+            gw.show_message("That's a 5 letter English word") # Show message for correct guess
             if guess == secret_word: # If the guess is the target word
                 gw.show_message("Congratulations! You've won!") # Show message for winning
                 gw.set_current_row(N_ROWS) # Set the current row to the last row
@@ -28,8 +28,8 @@ def wordle():
                 gw.set_current_row(N_ROWS) # Set the current row to the last row
             else: # If the guess is not the target word
                 gw.set_current_row(current_row + 1) # Set the current row
-        else:  # If the guess is not valid
-            gw.show_message("Not in word list")  # Show message for invalid words
+        else: # If the guess is not valid
+            gw.show_message("Not in word list") # Show message for invalid words
 
     def word_from_row(row): # Get the word from a specific row
         word = "" # Initialize the word
@@ -63,7 +63,7 @@ def wordle():
     def five_letter_word(): # Get a random 5-letter word from the English word list
         random.shuffle(ENGLISH_WORDS) # Shuffle the English word list
         for word in ENGLISH_WORDS: # Iterate through each word in the English word list
-            if len(word) == 5: # If the word is 5 letters long
+            if len(word) == 5 and not word.endswith('s'): # If the word is 5 letters long and does not end with 's' (to avoid plurals) 
                 return word.upper() # Return the word
 
     secret_word = five_letter_word() # Get a random 5-letter word from the English word list and convert it to uppercase
