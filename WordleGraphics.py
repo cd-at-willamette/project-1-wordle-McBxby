@@ -11,9 +11,10 @@ the graphical display for the Wordle project.
 # the GWindow class in the Portable Graphics Library.
 
 from pgl import GWindow, GLabel, GRect, GCompound
+import random
 
-N_ROWS = 6			# Number of rows
-N_COLS = 5			# Number of columns
+N_ROWS = 6 			# Number of rows
+N_COLS = random.choice([3, 5])			# Number of columns
 
 GWINDOW_WIDTH = 500		# Width of the graphics window
 GWINDOW_HEIGHT = 700		# Height of the graphics window
