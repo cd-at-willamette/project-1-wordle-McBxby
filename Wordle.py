@@ -1,9 +1,9 @@
 ########################################
 # Name: Myles Crandall
 # Collaborators (if any): 
-# GenAI Transcript (if any): Got help from ChatGPT for the color_row function specifically remaining letters equal to the target word
+# GenAI Transcript (if any): Got help from ChatGPT for the color_row function specifically remaining letters equal to the target word. I also asked it to put a title on my Wordle
 # Estimated time spent (hr): 6.0
-# Description of any added extensions: I asked ChatGPT to help me with adding "Welcome to Myles's Worlde!" at the top of the game.
+# Description of any added extensions: When ran, it will either give a you 3-letter word to guess or 5-letter word to guess
 ########################################
 
 from WordleGraphics import *  # WordleGWindow, N_ROWS, N_COLS, CORRECT_COLOR, PRESENT_COLOR, MISSING_COLOR, UNKNOWN_COLOR
@@ -63,7 +63,7 @@ def wordle():
     def five_letter_word(): # Get a random 5-letter word from the English word list
         random.shuffle(ENGLISH_WORDS) # Shuffle the English word list
         for word in ENGLISH_WORDS: # Iterate through each word in the English word list
-            if len(word) == 5 and not word.endswith('s'): # If the word is 5 letters long and does not end with 's' (to avoid plurals) 
+            if len(word) == N_COLS and not word.endswith('s'): # If the word is 5 letters long and does not end with 's' (to avoid plurals) 
                 return word.upper() # Return the word
 
     secret_word = five_letter_word() # Get a random 5-letter word from the English word list and convert it to uppercase
