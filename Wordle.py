@@ -1,6 +1,6 @@
 ########################################
 # Name: Myles Crandall
-# Collaborators (if any): 
+# Collaborators (if any): n/a
 # GenAI Transcript (if any): Got help from ChatGPT for the color_row function specifically remaining letters equal to the target word. I also asked it to put a title on my Wordle
 # Estimated time spent (hr): 6.0
 # Description of any added extensions: When ran, it will either give a you 3-letter word to guess or 5-letter word to guess
